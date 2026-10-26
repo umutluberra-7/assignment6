@@ -1,6 +1,7 @@
 import { useEffect, useReducer } from "react";
 import { fetchPosts } from "./api/postsApi";
 import { postsReducer, initialState } from "./reducer/postsReducer";
+import PostList from "./components/PostList";
 
 function App() {
   const [state, dispatch] = useReducer(postsReducer, initialState);
@@ -35,9 +36,7 @@ function App() {
 
       {!loading && !error && posts.length === 0 && <p>No posts found.</p>}
 
-      {!loading && !error && posts.length > 0 && (
-        <p>{posts.length} posts loaded.</p>
-      )}
+      {!loading && !error && posts.length > 0 && <PostList posts={posts} />}
     </div>
   );
 }

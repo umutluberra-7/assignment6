@@ -22,4 +22,3 @@ npm run dev
 - **Cleanup and StrictMode:** In development, StrictMode runs the effect twice, so the first request is cancelled by the `AbortController` cleanup. I had to ignore `AbortError` so a cancelled request is not shown as an error to the user.
 - **Derived state:** At first it seemed natural to keep the filtered posts in state, but that would duplicate data and could get out of sync. I compute `filteredPosts` during render from `posts` and `filter` instead.
 - **Environment setup:** The `code` command did not work on my Mac and I first opened only the `src` folder in VS Code, so I could not find the README. Opening the whole project folder fixed it.
-Bunu README’nin en altına, ## Challenges başlığının yerine yapıştır. Kaydet (Cmd+S), sonra:
